@@ -1,20 +1,20 @@
 package org.launchcode.techjobs.oo;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import javax.swing.text.Position;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertNotEquals;
 
 public class JobTest {
     //TODO: Create your unit tests here
     @Test
     public void testSettingJobId(){
-Job job = new Job();
-Job job2 = new Job();
-        assertNotEquals(job, job2);
+        Job job = new Job();
+        Job job2 = new Job();
+        assertNotEquals(job.getId(), job2.getId());
     }
 
     @Test
@@ -36,6 +36,6 @@ Job job2 = new Job();
         Job job1 = new Job("Web developer", new Employer("ACME"), new Location("Dallas"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Web developer", new Employer("ACME"), new Location("Dallas"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-
+        assertFalse(job1.equals(job2));
     }
 }
