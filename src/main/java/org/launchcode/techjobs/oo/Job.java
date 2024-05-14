@@ -49,6 +49,20 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+//    @Override
+//    public String toString() {
+//        return System.lineSeparator();
+//    }
+
+    @Override
+    public String toString() {
+        return "\nID: " + this.getId() +
+                "\nName: " + this.getName() +
+                "\nEmployer: " + this.getEmployer() +
+                "\nLocation: " + this.getLocation() +
+                "\nPosition Type: " + this.getPositionType() +
+                "\nCore Competency: " + this.getCoreCompetency() + "\n";
+    }
 
 //Getters
     public int getId() {
@@ -60,19 +74,36 @@ public class Job {
     }
 
     public Employer getEmployer() {
-        return employer;
+        if (this.employer.getValue().isEmpty()) {
+            return new Employer("Data not available");
+        } else {
+            return employer;
+        }
     }
 
     public Location getLocation() {
-        return location;
+
+        if (this.location.getValue().isEmpty()) {
+            return new Location("Data not available");
+        } else {
+            return location;
+        }
     }
 
     public PositionType getPositionType() {
-        return positionType;
+        if (this.positionType.getValue().isEmpty()) {
+            return new PositionType("Data not available");
+        } else {
+            return this.positionType;
+        }
     }
 
     public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
+        if (this.coreCompetency.getValue().isEmpty()) {
+            return new CoreCompetency("Data not available");
+        } else {
+            return coreCompetency;
+        }
     }
 
     //Setters
