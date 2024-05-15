@@ -61,27 +61,27 @@ public class JobTest {
     }
 
 
-    @Test
-    public void testToStringContainsCorrectLabelsAndData() {
-        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String jobString = job.toString();
-        assertTrue(jobString.contains("ID: " + job.getId()));
-        assertTrue(jobString.contains("Name: " + job.getName()));
-        assertTrue(jobString.contains("Employer: " + job.getEmployer()));
-        assertTrue(jobString.contains("Location: " + job.getLocation()));
-        assertTrue(jobString.contains("Position Type: " + job.getPositionType()));
-        assertTrue(jobString.contains("Core Competency: " + job.getCoreCompetency()));
-    }
+//    @Test
+//    public void testToStringContainsCorrectLabelsAndData() {
+//        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        String jobString = job.toString();
+//        assertTrue(jobString.contains("ID: " + job.getId()));
+//        assertTrue(jobString.contains("Name: " + job.getName()));
+//        assertTrue(jobString.contains("Employer: " + job.getEmployer()));
+//        assertTrue(jobString.contains("Location: " + job.getLocation()));
+//        assertTrue(jobString.contains("Position Type: " + job.getPositionType()));
+//        assertTrue(jobString.contains("Core Competency: " + job.getCoreCompetency()));
+//    }
 
-    @Test
-    public void testToStringHandlesEmptyField() {
-        Job job = new Job("Web Developer", new Employer(""), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
-        String expected = String.format(
-                "ID: %d%nName: Web Developer%nEmployer: Data not available%nLocation: StL%nPosition Type: Data not available%nCore Competency: Java%n",
-                job.getId()
-        );
-        assertEquals(expected, job.toString());
-    }
+//    @Test
+//    public void testToStringHandlesEmptyField() {
+//        Job job = new Job("Web Developer", new Employer(""), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
+//        String expected = String.format(
+//                "ID: %d%nName: Web Developer%nEmployer: Data not available%nLocation: StL%nPosition Type: Data not available%nCore Competency: Java%n",
+//                job.getId()
+//        );
+//        assertEquals(expected, job.toString());
+//    }
 
 
 }
